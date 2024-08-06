@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import toast from "react-hot-toast";
 import axios from 'axios';
 import './slide.css';
 
@@ -24,28 +25,57 @@ const Register = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   const apiUrl = isSignUp ? 'http://localhost:3000/users/register' : 'http://localhost:3000/users/login';
+  //   const requestData = { name, email, password, role };
+
+  //   try {
+  //     const response = await axios.post(apiUrl, requestData);
+
+  //     if (isSignUp) {
+  //       console.log(response.data.message);
+  //       setFormData({ ...formData, isSignUp: false });
+  //     } else {
+  //       const { token, userId } = response.data;
+  //       localStorage.setItem('token', token);
+  //       localStorage.setItem('userId', userId);
+  //       navigate('/dashboard');
+  //     }
+  //   } catch (error) {
+  //     console.error(`${isSignUp ? 'Signup' : 'Login'} failed:`, error);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const apiUrl = isSignUp ? 'http://localhost:3000/users/register' : 'http://localhost:3000/users/login';
     const requestData = { name, email, password, role };
-
-    console.log(requestData);
-
+  
     try {
+      const toastId = toast.loading("Entering");
       const response = await axios.post(apiUrl, requestData);
-
+  
       if (isSignUp) {
         console.log(response.data.message);
         setFormData({ ...formData, isSignUp: false });
+        toast.success("Signed Up Successfully", { id: toastId });
       } else {
         const { token, userId } = response.data;
         localStorage.setItem('token', token);
         localStorage.setItem('userId', userId);
+        toast.success("Logged In Successfully", { id: toastId });
         navigate('/dashboard');
       }
     } catch (error) {
       console.error(`${isSignUp ? 'Signup' : 'Login'} failed:`, error);
+      if (isSignUp) {
+        toast.error("Signup Failed");
+      } else {
+        toast.error("Login Failed");
+      }
     }
   };
 
