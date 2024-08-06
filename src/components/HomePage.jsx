@@ -11,13 +11,13 @@ const HomePage = () => {
           <TypeAnimation
             sequence={[
               "Disaster Relief Resource Coordination System",
-              2000,
+              1000,
               "Coordinating Resources for Disaster Relief",
               2000,
               "Disaster Relief Resource Coordination System",
-              2000,
+              1500,
             ]}
-            speed={100}
+            speed={50}
             repeat={Infinity}
             className="type-animation"
           />

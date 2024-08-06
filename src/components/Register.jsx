@@ -4,7 +4,7 @@ import axios from 'axios';
 import './slide.css';
 
 const Register = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -42,7 +42,7 @@ const Register = () => {
         const { token, userId } = response.data;
         localStorage.setItem('token', token);
         localStorage.setItem('userId', userId);
-        navigate('/dashboard'); 
+        navigate('/dashboard');
       }
     } catch (error) {
       console.error(`${isSignUp ? 'Signup' : 'Login'} failed:`, error);
@@ -58,7 +58,11 @@ const Register = () => {
             <input type="text" placeholder="Name" name="name" value={name} onChange={handleChange} required />
             <input type="email" placeholder="Email" name="email" value={email} onChange={handleChange} required />
             <input type="password" placeholder="Password" name="password" value={password} onChange={handleChange} required />
-            <input type="text" placeholder="Role" name="role" value={role} onChange={handleChange} required />
+            <select name="role" value={role} onChange={handleChange} required>
+              <option value="">Select a role</option>
+              <option value="donor">donor</option>
+              <option value="volunteer">volunteer</option>
+            </select>
             <button type="submit">Register</button>
           </form>
         </div>
