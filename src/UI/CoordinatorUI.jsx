@@ -1,20 +1,3 @@
-// import React from "react";
-// import Header from "../coordinatorComponents/Header";
-// import Requests from "../coordinatorComponents/Requests";
-// import { Provider } from "react-redux";
-// import store from "../redux/store";
-
-// const CoordinatorUI = () => {
-//     return (
-//         <Provider store={store}>
-//             <Header />
-//             <Requests />
-//         </Provider>
-//     )
-// }
-
-// export default CoordinatorUI;
-
 import React, { useState } from "react";
 import { styled, ThemeProvider, createTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -30,18 +13,16 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import GroupAddIcon from "@mui/icons-material/GroupAdd";
-import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
-// import Card from "@mui/material/Card";
-// import CardMedia from "@mui/material/CardMedia";
-// import CardContent from "@mui/material/CardContent";
-import List from "@mui/material/List";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { useNavigate } from "react-router-dom";
 import Helpers from "../coordinatorComponents/Helpers";
-
+import Tasks from "../coordinatorComponents/Tasks";
+import CreateTask from "../coordinatorComponents/CreateTask";
+import Resources from "../coordinatorComponents/Resources";
+import Requests from "../coordinatorComponents/CreateRequests";
+import Responses from "../coordinatorComponents/RequestStatus";
+import List from "@mui/material/List";
+import BecomeACo from "../coordinatorComponents/BecomeACo";
 
 const drawerWidth = 240;
 
@@ -108,7 +89,7 @@ const theme = createTheme({
     },
 });
 
-export default function OrganizerDashboard() {
+export default function CoordinatorDashboard() {
     const [open, setOpen] = useState(false);
     const [selectedView, setSelectedView] = useState(null);
 
@@ -127,23 +108,13 @@ export default function OrganizerDashboard() {
         setOpen(false);
     };
 
-    const handleCardClick = (view) => {
-        setSelectedView(view);
-        setOpen(false);
-    };
     const handleHomeClick = () => {
         navigate("/register");
     };
 
     return (
         <ThemeProvider theme={theme}>
-            <Box
-                sx={{
-                    display: "flex",
-                    minHeight: "100vh",
-                }}
-            >
-
+            <Box sx={{ display: "flex", minHeight: "100vh" }}>
                 <CssBaseline />
                 <AppBar position="fixed" open={open}>
                     <Toolbar>
@@ -176,9 +147,11 @@ export default function OrganizerDashboard() {
                 >
                     <Box>
                         <DrawerHeader>
-                            <IconButton onClick={handleDrawerClose} color="inherit" sx={{
-                                "&:hover": { backgroundColor: "#000", color: "white" },
-                            }}>
+                            <IconButton
+                                onClick={handleDrawerClose}
+                                color="inherit"
+                                sx={{ "&:hover": { backgroundColor: "#000", color: "white" } }}
+                            >
                                 <ChevronLeftIcon />
                             </IconButton>
                         </DrawerHeader>
@@ -186,57 +159,43 @@ export default function OrganizerDashboard() {
                         <StyledList>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("View Helpers")}
-                                sx={{
-                                    "&:hover": { backgroundColor: "#000", color: "white" },
-                                }}
+                                sx={{ "&:hover": { backgroundColor: "#000", color: "white" } }}
                             >
                                 <ListItemText primary="View Helpers" />
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("View Tasks")}
-                                sx={{
-                                    "&:hover": { backgroundColor: "#000", color: "white" },
-                                }}
+                                sx={{ "&:hover": { backgroundColor: "#000", color: "white" } }}
                             >
                                 <ListItemText primary="View Tasks" />
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("Create Tasks")}
-                                sx={{
-                                    "&:hover": { backgroundColor: "#000", color: "white" },
-                                }}
+                                sx={{ "&:hover": { backgroundColor: "#000", color: "white" } }}
                             >
                                 <ListItemText primary="Create Tasks" />
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("View Resources")}
-                                sx={{
-                                    "&:hover": { backgroundColor: "#000", color: "white" },
-                                }}
+                                sx={{ "&:hover": { backgroundColor: "#000", color: "white" } }}
                             >
                                 <ListItemText primary="View Resources" />
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("Send Requests")}
-                                sx={{
-                                    "&:hover": { backgroundColor: "#000", color: "white" },
-                                }}
+                                sx={{ "&:hover": { backgroundColor: "#000", color: "white" } }}
                             >
                                 <ListItemText primary="Send Requests" />
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("Responses")}
-                                sx={{
-                                    "&:hover": { backgroundColor: "#000", color: "white" },
-                                }}
+                                sx={{ "&:hover": { backgroundColor: "#000", color: "white" } }}
                             >
                                 <ListItemText primary="Responses" />
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("Become a Co")}
-                                sx={{
-                                    "&:hover": { backgroundColor: "#000", color: "white" },
-                                }}
+                                sx={{ "&:hover": { backgroundColor: "#000", color: "white" } }}
                             >
                                 <ListItemText primary="Become a Co" />
                             </ListItemButton>
@@ -257,25 +216,16 @@ export default function OrganizerDashboard() {
                 </Drawer>
                 <Main open={open}>
                     <DrawerHeader />
-                    {selectedView === null && (
-                        <Box
-                            sx={{
-                                display: "flex",
-                                flexWrap: "wrap",
-                                justifyContent: "space-around",
-                                gap: 4,
-                                padding: 4,
-                            }}
-                        >
-
-                        </Box>
-                    )}
                     {selectedView === 'View Helpers' && <Helpers />}
-                    {/* {selectedView === 'enrollParty' && <EnrollPartyForm />}
-                    {selectedView === 'viewVoters' && <ViewVoterPage />}
-                    {selectedView === 'viewParties' && <ViewPartyPage />} */}
+                    {selectedView === 'View Tasks' && <Tasks />}
+                    {selectedView === 'Create Tasks' && <CreateTask />}
+                    {selectedView === 'View Resources' && <Resources />}
+                    {selectedView === 'Send Requests' && <Requests />}
+                    {selectedView === 'Responses' && <Responses />}
+                    {selectedView === 'Become a Co' && <BecomeACo/>}
                 </Main>
             </Box>
         </ThemeProvider>
     );
 }
+    
