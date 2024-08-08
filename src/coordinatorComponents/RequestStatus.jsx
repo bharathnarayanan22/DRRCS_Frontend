@@ -35,7 +35,7 @@ const RequestStatus = () => {
     try {
       const response = await axios.get(`http://localhost:3000/request/${id}/responses`);
       setResponses(response.data);
-      setSelectedRequest(id); // Set selected request ID
+      setSelectedRequest(id); 
       setOpen(true);
     } catch (error) {
       console.error("Error fetching request responses:", error);
@@ -46,17 +46,31 @@ const RequestStatus = () => {
 
   const handleAddResource = async (response) => {
     try {
-      const { type, quantity, location } = newResource;
-      await axios.post("http://localhost:3000/createResource", {
-        type,
-        quantity,
-        location
+      const token = localStorage.getItem("token");
+      const resource = {
+        type: response.resource?.type, 
+        quantity: response.resource?.quantity, 
+        location: response.resource?.location, 
+      };
+      console.log(response)
+  
+      if (!resource.type || !resource.quantity || !resource.location) {
+        console.error("Resource data is incomplete.");
+        return;
+      }
+  
+      await axios.post("http://localhost:3000/resource/createResource", resource, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
-    //   setNewResource({ type: "", quantity: "", location: "" }); 
+  
+      setNewResource({ type: "", quantity: "", location: "" }); 
     } catch (error) {
       console.error("Error creating resource:", error);
     }
   };
+  
 
   return (
     <Box>
