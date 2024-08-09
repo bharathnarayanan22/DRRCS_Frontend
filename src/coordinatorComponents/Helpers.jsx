@@ -18,7 +18,7 @@ const Helpers = () => {
   useEffect(() => {
     const fetchHelpers = async () => {
       try {
-        const token = localStorage.getItem("token"); // Assuming the token is stored in local storage
+        const token = localStorage.getItem("token"); 
 
         const response = await axios.get("http://localhost:3000/users/VolunteersAndDonors", {
           headers: {
