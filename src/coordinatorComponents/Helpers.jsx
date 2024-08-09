@@ -11,14 +11,16 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { Typography, Box } from "@mui/material";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 const Helpers = () => {
   const [helpers, setHelpers] = useState({ volunteers: [], donors: [] });
+  const token = useSelector((state) => state.user.token)
 
   useEffect(() => {
     const fetchHelpers = async () => {
       try {
-        const token = localStorage.getItem("token"); 
+        // const token = localStorage.getItem("token"); 
 
         const response = await axios.get("http://localhost:3000/users/VolunteersAndDonors", {
           headers: {

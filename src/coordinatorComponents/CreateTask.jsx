@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { TextField, Button, Typography, Box } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 const theme = createTheme({
   palette: {
@@ -20,12 +21,13 @@ const CreateTask = () => {
   const [startLocation, setStartLocation] = useState("");
   const [endLocation, setEndLocation] = useState("");
 
+  const token = useSelector((state) => state.user.token)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     try {
-      const token = localStorage.getItem("token"); 
+      // const token = localStorage.getItem("token"); 
       const response = await axios.post(
         "http://localhost:3000/task/createTask",
         {

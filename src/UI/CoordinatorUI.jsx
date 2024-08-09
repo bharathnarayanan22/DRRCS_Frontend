@@ -23,6 +23,8 @@ import Requests from "../coordinatorComponents/CreateRequests";
 import Responses from "../coordinatorComponents/RequestStatus";
 import List from "@mui/material/List";
 import BecomeACo from "../coordinatorComponents/BecomeACo";
+import { useDispatch } from "react-redux";
+import { removeToken } from "../redux/userSlice";
 
 const drawerWidth = 240;
 
@@ -93,6 +95,7 @@ export default function CoordinatorDashboard() {
     const [open, setOpen] = useState(false);
     const [selectedView, setSelectedView] = useState(null);
 
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const handleDrawerOpen = () => {
@@ -109,7 +112,10 @@ export default function CoordinatorDashboard() {
     };
 
     const handleHomeClick = () => {
-        navigate("/register");
+            localStorage.removeItem('token');
+            dispatch(removeToken());
+            navigate('/register');
+
     };
 
     return (

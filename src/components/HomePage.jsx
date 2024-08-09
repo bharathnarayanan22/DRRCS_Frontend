@@ -1,9 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
+import { useSelector } from "react-redux";
 import styles from "./HomePage.module.css";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  const token = useSelector((state) => state.user.token);
+
+  const handleButtonClick = () => {
+    if (token) {
+      navigate("/dashboard");
+    } else {
+      navigate("/register");
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
@@ -27,9 +39,9 @@ const HomePage = () => {
           volunteers with those in need. Get real-time updates, track resources,
           and coordinate volunteers effectively.
         </p>
-        <Link to="/register" className={styles.registerButton}>
+        <button onClick={handleButtonClick} className={styles.registerButton}>
           Join the Relief Effort
-        </Link>
+        </button>
       </div>
       <div className={styles.rightSide}>
         <img src="/src/assets/2.jpg" alt="Disaster Relief" />

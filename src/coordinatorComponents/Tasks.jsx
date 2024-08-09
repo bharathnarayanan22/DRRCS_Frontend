@@ -11,16 +11,18 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { Typography, Box } from "@mui/material";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 const Tasks = () => {
     const [tasks, setTasks] = useState([]);
+    const token = useSelector((state) => state.user.token)
 
     useEffect(() => {
         const fetchTasks = async () => {
             try {
                 const response = await axios.get("http://localhost:3000/task/getTask", {
                     headers: {
-                        Authorization: `Bearer ${localStorage.getItem("token")}`,
+                        Authorization: `Bearer ${token}`,
                     },
                 });
                 setTasks(response.data);
