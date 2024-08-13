@@ -29,7 +29,7 @@ const MyTasks = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/task/acceptedTasks', {
+        const response = await axios.get('https://drrcs-backend.onrender.com/task/acceptedTasks', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           }
@@ -60,7 +60,7 @@ const MyTasks = () => {
     formData.append('taskId', selectedTask._id);
 
     try {
-      await axios.post('http://localhost:3000/task/uploadPhotos', formData, {
+      await axios.post('https://drrcs-backend.onrender.com/task/uploadPhotos', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -101,7 +101,7 @@ const MyTasks = () => {
               <ListItemAvatar>
                 {task.photos.length > 0 && (
                   <Avatar
-                    src={`http://localhost:3000${task.photos[0]}`} 
+                    src={`https://drrcs-backend.onrender.com${task.photos[0]}`} 
                     alt="Task thumbnail"
                   />
                 )}

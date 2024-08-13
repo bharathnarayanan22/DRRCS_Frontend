@@ -24,7 +24,7 @@ const Tasks = () => {
     useEffect(() => {
         const fetchTasks = async () => {
             try {
-                const response = await axios.get("http://localhost:3000/task/getTask", {
+                const response = await axios.get("https://drrcs-backend.onrender.com/task/getTask", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -40,7 +40,7 @@ const Tasks = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:3000/task/deleteTask/${id}`, {
+            await axios.delete(`https://drrcs-backend.onrender.com/task/deleteTask/${id}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
                 },
@@ -63,7 +63,7 @@ const Tasks = () => {
 
         try {
             const response = await axios.put(
-                `http://localhost:3000/task/updateTask/${editTask._id}`,
+                `https://drrcs-backend.onrender.com/task/updateTask/${editTask._id}`,
                 editTask,
                 {
                     headers: {

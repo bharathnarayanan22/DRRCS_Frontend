@@ -12,7 +12,7 @@ const UserProfilePage = ({ userId }) => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/users/userProfile/${userId}`, {
+        const response = await axios.get(`https://drrcs-backend.onrender.com/users/userProfile/${userId}`, {
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
         });
         setUser(response.data.user);

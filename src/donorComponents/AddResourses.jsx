@@ -41,7 +41,7 @@ const AddResources = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/resource/createResource",
+        "https://drrcs-backend.onrender.com/resource/createResource",
         resourceData,
         {
           headers: {

@@ -24,7 +24,7 @@ const MyContributions = () => {
     const fetchData = async () => {
       try {
         // Fetch resources
-        const resourceResponse = await axios.get('http://localhost:3000/resource/myResources', {
+        const resourceResponse = await axios.get('https://drrcs-backend.onrender.com/resource/myResources', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -32,7 +32,7 @@ const MyContributions = () => {
         setResources(resourceResponse.data);
 
         // Fetch responses
-        const responseResponse = await axios.get('http://localhost:3000/response/myResponses', {
+        const responseResponse = await axios.get('https://drrcs-backend.onrender.com/response/myResponses', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

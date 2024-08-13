@@ -22,7 +22,7 @@ const Tasks = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/task/getTask", {
+        const response = await axios.get("https://drrcs-backend.onrender.com/task/getTask", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -43,7 +43,7 @@ const Tasks = () => {
   const handleAccept = async (id) => {
     try {
       const { data: acceptedTasks } = await axios.get(
-        "http://localhost:3000/task/acceptedTasks",
+        "https://drrcs-backend.onrender.com/task/acceptedTasks",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -53,10 +53,6 @@ const Tasks = () => {
 
       console.log(acceptedTasks);
 
-      // if (acceptedTasks.length > 0) {
-      //   toast.error("You have already accepted a task. You cannot accept another one.");
-      //   return;
-      // }
       
       const hasActiveTasks = acceptedTasks.some(
         (task) => task.status === "pending" || task.status === "in-progress"
@@ -71,7 +67,7 @@ const Tasks = () => {
       }
 
       const response = await axios.put(
-        `http://localhost:3000/task/acceptTask/${id}`,
+        `https://drrcs-backend.onrender.com/task/acceptTask/${id}`,
         {},
         {
           headers: {
@@ -94,7 +90,7 @@ const Tasks = () => {
   //   const handleAccept = async (id) => {
   //     try {
   //         // Fetch all tasks assigned to the user
-  //         const { data: tasks } = await axios.get("http://localhost:3000/task/acceptedTasks", {
+  //         const { data: tasks } = await axios.get("https://drrcs-backend.onrender.com/task/acceptedTasks", {
   //             headers: {
   //                 Authorization: `Bearer ${localStorage.getItem("token")}`,
   //             },
@@ -109,7 +105,7 @@ const Tasks = () => {
   //         }
 
   //         // Accept the new task
-  //         const response = await axios.put(`http://localhost:3000/task/acceptTask/${id}`, {}, {
+  //         const response = await axios.put(`https://drrcs-backend.onrender.com/task/acceptTask/${id}`, {}, {
   //             headers: {
   //                 Authorization: `Bearer ${localStorage.getItem("token")}`,
   //             },
@@ -126,7 +122,7 @@ const Tasks = () => {
   const handleDecline = async (id) => {
     try {
       await axios.put(
-        `http://localhost:3000/task/declineTask/${id}`,
+        `https://drrcs-backend.onrender.com/task/declineTask/${id}`,
         {},
         {
           headers: {

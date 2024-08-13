@@ -15,7 +15,7 @@ const EditResource = ({ resource, onUpdate }) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.put(`http://localhost:3000/resource/updateResource/${id}`, {
+      const response = await axios.put(`https://drrcs-backend.onrender.com/resource/updateResource/${id}`, {
         type,
         quantity,
         location,

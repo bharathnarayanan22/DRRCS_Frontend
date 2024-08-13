@@ -11,7 +11,7 @@ const Dashboard = () => {
     const fetchUserRole = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:3000/users/role", {
+        const response = await axios.get("https://drrcs-backend.onrender.com/users/role", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

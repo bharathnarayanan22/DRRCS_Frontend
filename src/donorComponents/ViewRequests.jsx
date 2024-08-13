@@ -45,7 +45,7 @@ const ViewRequests = () => {
     const fetchRequests = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/request/getRequests",
+          "https://drrcs-backend.onrender.com/request/getRequests",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -77,7 +77,7 @@ const ViewRequests = () => {
   const handleSubmitResponse = async () => {
     try {
       const response = await axios.post(
-        `http://localhost:3000/request/respondToRequest/${selectedRequest._id}`,
+        `https://drrcs-backend.onrender.com/request/respondToRequest/${selectedRequest._id}`,
         {
           type: selectedRequest.type,
           quantity: selectedRequest.quantity,

@@ -18,7 +18,7 @@ const CreateRequest = () => {
     
     try {
       const response = await axios.post(
-        "http://localhost:3000/request/createRequest",
+        "https://drrcs-backend.onrender.com/request/createRequest",
         {
           type,
           quantity,

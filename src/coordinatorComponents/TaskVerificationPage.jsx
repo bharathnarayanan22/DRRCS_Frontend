@@ -12,7 +12,7 @@ const TaskVerificationPage = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/task/pendingVerification', {
+        const response = await axios.get('https://drrcs-backend.onrender.com/task/pendingVerification', {
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
         });
         setTasks(response.data);
@@ -29,7 +29,7 @@ const TaskVerificationPage = () => {
 
   const handleVerifyTask = async (taskId) => {
     try {
-      await axios.put(`http://localhost:3000/task/updateTaskStatus/${taskId}`, {}, {
+      await axios.put(`https://drrcs-backend.onrender.com/task/updateTaskStatus/${taskId}`, {}, {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` } 
       });
       toast.success('Task Verification Successful');
@@ -79,7 +79,7 @@ const TaskVerificationPage = () => {
                     component="img"
                     alt="Task Photo"
                     height="200"
-                    image={`http://localhost:3000${task.photos[0]}`} 
+                    image={`https://drrcs-backend.onrender.com${task.photos[0]}`} 
                   />
                 ) : (
                   <Typography sx={{ textAlign: 'center', padding: 2 }}>No photos available</Typography>

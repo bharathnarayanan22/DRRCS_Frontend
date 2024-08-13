@@ -42,7 +42,7 @@ const RequestStatus = () => {
     const fetchRequests = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/request/getRequests"
+          "https://drrcs-backend.onrender.com/request/getRequests"
         );
         setRequests(response.data);
       } catch (error) {
@@ -56,7 +56,7 @@ const RequestStatus = () => {
   const handleViewResponses = async (id) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/request/${id}/responses`
+        `https://drrcs-backend.onrender.com/request/${id}/responses`
       );
       setResponses(response.data);
       setSelectedRequest(id);
@@ -83,7 +83,7 @@ const RequestStatus = () => {
       }
 
       await axios.post(
-        "http://localhost:3000/resource/createResource",
+        "https://drrcs-backend.onrender.com/resource/createResource",
         resource,
         {
           headers: {
@@ -130,7 +130,7 @@ const RequestStatus = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:3000/task/createTask", taskData,
+        "https://drrcs-backend.onrender.com/task/createTask", taskData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -295,10 +295,9 @@ const RequestStatus = () => {
             overflow: "auto",
           }}
         >
-          <Typography variant="h6" gutterBottom>
-            Create Task for Response ID: {selectedRequest}
+          <Typography variant="h6" gutterBottom sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight: 900, color: "#444" }}>
+            Create Task
           </Typography>
-          <form onSubmit={handleSubmitTask}>
             <TextField
               label="Description"
               name="description"
@@ -331,10 +330,9 @@ const RequestStatus = () => {
               fullWidth
               sx={{ mb: 2 }}
             />
-            <Button type="submit" variant="contained" color="primary">
+            <Button type="submit" variant="contained" color="primary" onSubmit={handleSubmitTask}>
               Submit Task
             </Button>
-          </form>
         </Box>
       </Modal>
     </Box>

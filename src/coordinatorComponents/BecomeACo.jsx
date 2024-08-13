@@ -23,7 +23,7 @@ const BecomeACo = () => {
     const fetchApplications = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/role-change-requests",
+          "https://drrcs-backend.onrender.com/role-change-requests",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -50,7 +50,7 @@ const BecomeACo = () => {
     try {
       // Send the status update to the backend
       await axios.post(
-        "http://localhost:3000/change-role/handle-request",
+        "https://drrcs-backend.onrender.com/change-role/handle-request",
         {
           requestId,
           action: status,

@@ -32,7 +32,7 @@ const Helpers = () => {
     const fetchHelpers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/users/VolunteersAndDonors",
+          "https://drrcs-backend.onrender.com/users/VolunteersAndDonors",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ const Helpers = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/users/deleteUser/${id}`, {
+      await axios.delete(`https://drrcs-backend.onrender.com/users/deleteUser/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

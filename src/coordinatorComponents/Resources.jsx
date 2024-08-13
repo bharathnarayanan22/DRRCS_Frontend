@@ -31,7 +31,7 @@ const Resources = () => {
     const fetchResources = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/resource/getResource",
+          "https://drrcs-backend.onrender.com/resource/getResource",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -49,7 +49,7 @@ const Resources = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/resource/deleteResource/${id}`, {
+      await axios.delete(`https://drrcs-backend.onrender.com/resource/deleteResource/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -72,7 +72,7 @@ const Resources = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:3000/resource/updateResource/${editResource._id}`,
+        `https://drrcs-backend.onrender.com/resource/updateResource/${editResource._id}`,
         editResource,
         {
           headers: {

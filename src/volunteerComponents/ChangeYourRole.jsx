@@ -13,7 +13,7 @@ const ChangeYourRole = () => {
   const changeToDonor = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:3000/change-role/donor', {}, {
+      const response = await axios.post('https://drrcs-backend.onrender.com/change-role/donor', {}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -31,7 +31,7 @@ const ChangeYourRole = () => {
   const requestCoordinatorRole = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:3000/change-role/request-coordinator', {}, {
+      const response = await axios.post('https://drrcs-backend.onrender.com/change-role/request-coordinator', {}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
