@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from '../helpers/auth-config';
 import {
   Button,
   Typography,
@@ -50,6 +50,7 @@ const Tasks = () => {
           },
         }
       );
+
       console.log(acceptedTasks);
 
       // if (acceptedTasks.length > 0) {
@@ -145,14 +146,18 @@ const Tasks = () => {
 
   return (
     <Box>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#444" }}>
         Pending Tasks
       </Typography>
+      {tasks.length === 0 ? (<Typography>
+        No tasks available
+      </Typography>):(
       <TableContainer component={Paper}>
         <Table aria-label="tasks table">
           <TableHead>
-            <TableRow>
-              <TableCell>ID</TableCell>
+            <TableRow
+             sx={{ backgroundColor: "#444", "& th": { color: "#fff" } }}>
+              <TableCell>S.NO</TableCell>
               <TableCell>Description</TableCell>
               <TableCell>Volunteers Needed</TableCell>
               <TableCell>Start Location</TableCell>
@@ -162,13 +167,27 @@ const Tasks = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {tasks.map((task) => (
+            {tasks.map((task, index) => (
               <TableRow key={task._id}>
-                <TableCell>{task._id}</TableCell>
+                <TableCell>{index + 1}</TableCell>
                 <TableCell>{task.description}</TableCell>
                 <TableCell>{task.volunteersNeeded}</TableCell>
-                <TableCell>{task.startLocation}</TableCell>
-                <TableCell>{task.endLocation}</TableCell>
+                <TableCell><a
+                    style={{ color: "black" }}
+                    href={`https://www.google.com/maps/@?api=1&map_action=map&center=${task.startLocation.lat},${task.startLocation.lng}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="/src/assets/earth1.png" alt="Map"/>
+                  </a></TableCell>
+                <TableCell><a
+                    style={{ color: "black" }}
+                    href={`https://www.google.com/maps/@?api=1&map_action=map&center=${task.endLocation.lat},${task.endLocation.lng}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="/src/assets/earth1.png" alt="Map"/>
+                  </a></TableCell>
                 <TableCell>{task.status}</TableCell>
                 <TableCell>
                   <Button
@@ -193,6 +212,7 @@ const Tasks = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      )}
       <ToastContainer />
     </Box>
   );

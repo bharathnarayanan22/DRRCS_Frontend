@@ -4,12 +4,13 @@ import { TypeAnimation } from "react-type-animation";
 import { useSelector } from "react-redux";
 import styles from "./HomePage.module.css";
 
+
 const HomePage = () => {
   const navigate = useNavigate();
   const token = useSelector((state) => state.user.token);
 
   const handleButtonClick = () => {
-    if (token) {
+    if (localStorage.getItem('token')) {
       navigate("/dashboard");
     } else {
       navigate("/register");

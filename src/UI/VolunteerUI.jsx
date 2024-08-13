@@ -18,6 +18,17 @@ import { useNavigate } from "react-router-dom";
 import Tasks from "../volunteerComponents/Tasks";
 import List from "@mui/material/List";
 import MyTasks from "../volunteerComponents/MyTasks";
+import ChangeYourRole from "../volunteerComponents/ChangeYourRole";
+import TaskIcon from "@mui/icons-material/Task";
+import AssignmentIcon from "@mui/icons-material/Assignment";
+import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import logo1 from "../assets/logo.png";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import UserProfilePage from "../coordinatorComponents/UserProfile";
+import { Modal, Button } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -76,10 +87,10 @@ const StyledListItemIcon = styled(ListItemIcon)(({ theme }) => ({
 const theme = createTheme({
     palette: {
         primary: {
-            main: "#000",
+            main: "#444",
         },
         secondary: {
-            main: "#000",
+            main: "#444",
         },
     },
 });
@@ -87,6 +98,8 @@ const theme = createTheme({
 export default function CoordinatorDashboard() {
     const [open, setOpen] = useState(false);
     const [selectedView, setSelectedView] = useState(null);
+    const [selectedUserId, setSelectedUserId] = useState(null);
+    const [modalOpen, setModalOpen] = useState(false);
 
     const navigate = useNavigate();
 
@@ -100,15 +113,38 @@ export default function CoordinatorDashboard() {
 
     const handleMenuItemClick = (view) => {
         setSelectedView(view);
-        setOpen(false);
     };
 
     const handleHomeClick = () => {
         navigate("/register");
     };
 
+    const handleOpenProfile = (userId) => {
+        setSelectedUserId(userId);
+        setModalOpen(true);
+    };
+
+    const handleCloseProfile = () => {
+        setSelectedUserId(null);
+        setModalOpen(false);
+    };
+
     return (
         <ThemeProvider theme={theme}>
+            {/* <div
+                style={{
+                    backgroundImage: `url(${logo1})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'contain',
+                    backgroundRepeat: 'no-repeat',
+                    opacity: 0.2,
+                    marginTop: '10%',
+                    height: '70%',
+                    width: '100%',
+                    position: 'absolute',
+                    zIndex: -1,
+                }}
+            /> */}
             <Box sx={{ display: "flex", minHeight: "100vh" }}>
                 <CssBaseline />
                 <AppBar position="fixed" open={open}>
@@ -124,6 +160,11 @@ export default function CoordinatorDashboard() {
                         </IconButton>
                         <Typography variant="h6" noWrap component="div" color="white">
                             Volunteer Dashboard
+                        </Typography>
+                        <Box sx={{ flexGrow: 1 }} />
+                        <AccountCircleIcon sx={{ marginRight: 1 }} onClick={() => handleOpenProfile(localStorage.getItem('userId'))} />
+                        <Typography variant="body1" color="white" onClick={() => handleOpenProfile(localStorage.getItem('userId'))}>
+                            {localStorage.getItem('username')}
                         </Typography>
                     </Toolbar>
                 </AppBar>
@@ -141,11 +182,12 @@ export default function CoordinatorDashboard() {
                     open={open}
                 >
                     <Box>
+
                         <DrawerHeader>
                             <IconButton
                                 onClick={handleDrawerClose}
                                 color="inherit"
-                                sx={{ "&:hover": { backgroundColor: "#000", color: "white" } }}
+                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" } }}
                             >
                                 <ChevronLeftIcon />
                             </IconButton>
@@ -154,46 +196,125 @@ export default function CoordinatorDashboard() {
                         <StyledList>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("Available Tasks")}
-                                sx={{ "&:hover": { backgroundColor: "#000", color: "white" } }}
+                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px" }}
                             >
+                                {/* <ListItemIcon> */}
+                                <TaskIcon />
+                                {/* </ListItemIcon> */}
                                 <ListItemText primary="Available Tasks" />
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("MyTasks")}
-                                sx={{ "&:hover": { backgroundColor: "#000", color: "white" } }}
+                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px" }}
                             >
+                                {/* <ListItemIcon> */}
+                                <AssignmentIcon />
+                                {/* </ListItemIcon> */}
                                 <ListItemText primary="MyTasks" />
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("Change your Role")}
-                                sx={{ "&:hover": { backgroundColor: "#000", color: "white" } }}
+                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px" }}
                             >
+                                {/* <ListItemIcon> */}
+                                <SwapHorizIcon />
+                                {/* </ListItemIcon> */}
                                 <ListItemText primary="Change your Role" />
                             </ListItemButton>
-
                         </StyledList>
                     </Box>
                     <Box sx={{ marginTop: "auto" }}>
                         <Divider />
                         <ListItemButton
                             onClick={handleHomeClick}
-                            sx={{ "&:hover": { backgroundColor: "#000", color: "white" } }}
+                            sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px" }}
                         >
-                            <StyledListItemIcon>
-                                <ExitToAppIcon />
-                            </StyledListItemIcon>
+                            {/* <StyledListItemIcon> */}
+                            <ExitToAppIcon />
+                            {/* </StyledListItemIcon> */}
                             <ListItemText primary="Log Out" />
                         </ListItemButton>
                     </Box>
                 </Drawer>
+                <div
+                    style={{
+                        backgroundImage: `url(${logo1})`,
+                        backgroundPosition: 'center',
+                        backgroundSize: 'contain',
+                        backgroundRepeat: 'no-repeat',
+                        opacity: 0.2,
+                        marginTop: '10%',
+                        height: '70%',
+                        width: '100%',
+                        position: 'absolute',
+                        zIndex: -1,
+                    }}
+                />
                 <Main open={open}>
                     <DrawerHeader />
+                    {selectedView === null && (
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', gap: 10, padding: 4, alignItems: "center", alignContent: "center", height: "500px" }}>
+                            <Card sx={{ backgroundColor: '#444', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("Available Tasks")}>
+                                <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                    <TaskIcon sx={{ fontSize: 125, color: 'white' }} />
+                                    <Typography gutterBottom variant="body2" component="div" color="white" textAlign="center">
+                                        Available Tasks
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                            <Card sx={{ backgroundColor: '#444', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("MyTasks")}>
+                                <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                    <AssignmentIcon sx={{ fontSize: 125, color: 'white' }} />
+                                    <Typography gutterBottom variant="body2" component="div" color="white" textAlign="center">
+                                        MyTasks
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                            <Card sx={{ backgroundColor: '#444', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("Change your Role")}>
+                                <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                    <SwapHorizIcon sx={{ fontSize: 125, color: 'white' }} />
+                                    <Typography gutterBottom variant="body2" component="div" color="white" textAlign="center">
+                                        Change your Role
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Box>
+                    )}
                     {selectedView === 'Available Tasks' && <Tasks />}
-                    {selectedView === 'MyTasks' && <MyTasks/>}
-                    {selectedView === 'View Tasks' && <Tasks />}
+                    {selectedView === 'MyTasks' && <MyTasks />}
+                    {selectedView === 'Change your Role' && <ChangeYourRole />}
                 </Main>
+                <Modal
+                    open={modalOpen}
+                    onClose={handleCloseProfile}
+                    aria-labelledby="user-profile-modal"
+                    aria-describedby="user-profile-modal-description"
+                >
+                    <Box
+                        sx={{
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                            width: 600,
+                            bgcolor: "background.paper",
+                            border: "2px solid #000",
+                            boxShadow: 24,
+                            p: 4,
+                        }}
+                    >
+                        {selectedUserId && <UserProfilePage userId={selectedUserId} />}
+                        <Button
+                            onClick={handleCloseProfile}
+                            variant="contained"
+                            color="primary"
+                            sx={{ mt: 2, ml: 1  }}
+                        >
+                            Close
+                        </Button>
+                    </Box>
+                </Modal>
             </Box>
         </ThemeProvider>
     );
 }
-    

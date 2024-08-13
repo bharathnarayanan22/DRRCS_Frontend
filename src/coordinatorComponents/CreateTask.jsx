@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { TextField, Button, Typography, Box } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import axios from "axios";
+import axios from '../helpers/auth-config';
 import { useSelector } from "react-redux";
+import MapPicker from "../components/MapPicker";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#000',
+      main: '#444',
     },
     secondary: {
-      main: '#000',
+      main: '#444',
     },
   },
 });
@@ -25,6 +28,7 @@ const CreateTask = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(startLocation, endLocation)
     
     try {
       // const token = localStorage.getItem("token"); 
@@ -42,20 +46,27 @@ const CreateTask = () => {
           },
         }
       );
+      toast.success(`Task Creation Successfull` );
       console.log("Task created:", response.data);
+      setDescription("");
+      setVolunteersNeeded("");
+      setStartLocation("");
+      setEndLocation("");
       // Optionally clear the form or handle success
     } catch (error) {
       console.error("Error creating task:", error);
+      toast.error(`Task Creation Failed` );
     }
   };
 
   return (
     <ThemeProvider theme={theme}>
+      <ToastContainer/>
     <Box>
       <Typography
         variant="h4"
         gutterBottom
-       
+        sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#444" }}
       >
         Create New Task
       </Typography>
@@ -76,7 +87,7 @@ const CreateTask = () => {
           value={volunteersNeeded}
           onChange={(e) => setVolunteersNeeded(e.target.value)}
         />
-        <TextField
+        {/* <TextField
           label="Start Location"
           variant="outlined"
           fullWidth
@@ -91,8 +102,16 @@ const CreateTask = () => {
           margin="normal"
           value={endLocation}
           onChange={(e) => setEndLocation(e.target.value)}
-        />
-        <Button type="submit" variant="contained" onClick={handleSubmit}sx={{ backgroundColor: "#000", color: "#fff", mt: 2, ":hover": { backgroundColor: "#333" } }}>
+        /> */}
+        <Typography variant="h6" gutterBottom sx={{ color: "#444", fontWeight: "bold" }}>
+          Start Location
+        </Typography>
+        <MapPicker setLocation={setStartLocation} location={startLocation} />
+        <Typography variant="h6" gutterBottom sx={{ color: "#444", fontWeight: "bold", mt: 2 }}>
+          End Location
+        </Typography>
+        <MapPicker setLocation={setEndLocation} location={endLocation} />
+        <Button type="submit" variant="contained" onClick={handleSubmit}sx={{ backgroundColor: "#444", color: "#fff", mt: 2, ":hover": { backgroundColor: "#333" } }}>
           Create Task
         </Button>
     </Box>
