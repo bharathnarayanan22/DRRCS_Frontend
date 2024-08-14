@@ -45,7 +45,6 @@ const HomePage = () => {
         </button>
       </div>
       <div className={styles.rightSide}>
-        <img src="/src/assets/2.jpg" alt="Disaster Relief" />
       </div>
     </div>
   );
