@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import MapPicker from "../components/MapPicker";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import earth from "../assets/earth1.png";
 
 const ViewRequests = () => {
   const [requests, setRequests] = useState([]);
@@ -141,7 +142,7 @@ const ViewRequests = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/src/assets/earth1.png" alt="Map" />
+            <img src={earth} alt="Map" />
           </a>
           <Typography>Status: {request.status}</Typography>
           <Button

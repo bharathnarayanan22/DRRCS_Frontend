@@ -5,29 +5,14 @@ import DonorUI from "../UI/DonorUI";
 import axios from '../helpers/auth-config';
 
 const Dashboard = () => {
-  const [userRole, setUserRole] = useState(null);
 
-  useEffect(() => {
-    const fetchUserRole = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        const response = await axios.get("https://drrcs-backend.onrender.com/users/role", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setUserRole(response.data.role);
-      } catch (error) {
-        console.error("Error fetching user role:", error);
-      }
-    };
-
-    fetchUserRole();
-  }, []);
+  const userRole = localStorage.getItem('role')
+  console.log(userRole);
 
   if (!userRole) {
     return <div>Loading...</div>;
   }
+
 
   if (userRole === "coordinator") {
     return <CoordinatorUI />;

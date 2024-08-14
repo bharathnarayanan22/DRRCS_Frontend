@@ -19,6 +19,7 @@ import { Typography, Box } from "@mui/material";
 import axios from '../helpers/auth-config';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import earth from "../assets/earth1.png";
 
 
 const Resources = () => {
@@ -138,7 +139,7 @@ const Resources = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src="/src/assets/earth1.png" alt="Map" />
+                    <img src={earth} alt="Map" />
                   </a>
                 </TableCell>
                 <TableCell>{resource.donor.name}</TableCell>

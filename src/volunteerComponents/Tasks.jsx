@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import earth from "../assets/earth1.png";
 
 const Tasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -174,7 +175,7 @@ const Tasks = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src="/src/assets/earth1.png" alt="Map"/>
+                    <img src={earth} alt="Map"/>
                   </a></TableCell>
                 <TableCell><a
                     style={{ color: "black" }}
@@ -182,7 +183,7 @@ const Tasks = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src="/src/assets/earth1.png" alt="Map"/>
+                    <img src={earth} alt="Map"/>
                   </a></TableCell>
                 <TableCell>{task.status}</TableCell>
                 <TableCell>

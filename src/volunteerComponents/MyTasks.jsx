@@ -4,6 +4,7 @@ import { Container, Typography, List, ListItem, ListItemText, Button, CircularPr
 import { styled } from '@mui/system';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import earth from "../assets/earth1.png";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,

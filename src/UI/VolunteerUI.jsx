@@ -129,6 +129,11 @@ export default function CoordinatorDashboard() {
         setModalOpen(false);
     };
 
+    const selectedStyle = {
+        backgroundColor: "#444",
+        color: "white",
+    };
+
     return (
         <ThemeProvider theme={theme}>
             {/* <div
@@ -196,7 +201,8 @@ export default function CoordinatorDashboard() {
                         <StyledList>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("Available Tasks")}
-                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px" }}
+                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px",
+                                ...(selectedView === "Available Tasks" && selectedStyle) }}
                             >
                                 {/* <ListItemIcon> */}
                                 <TaskIcon />
@@ -205,7 +211,8 @@ export default function CoordinatorDashboard() {
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("MyTasks")}
-                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px" }}
+                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px",
+                                ...(selectedView === "MyTasks" && selectedStyle) }}
                             >
                                 {/* <ListItemIcon> */}
                                 <AssignmentIcon />
@@ -214,7 +221,8 @@ export default function CoordinatorDashboard() {
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("Change your Role")}
-                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px" }}
+                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px",
+                                ...(selectedView === "Change your Role" && selectedStyle) }}
                             >
                                 {/* <ListItemIcon> */}
                                 <SwapHorizIcon />
@@ -308,7 +316,7 @@ export default function CoordinatorDashboard() {
                             onClick={handleCloseProfile}
                             variant="contained"
                             color="primary"
-                            sx={{ mt: 2, ml: 1  }}
+                            sx={{ mt: 2, ml: 1 }}
                         >
                             Close
                         </Button>

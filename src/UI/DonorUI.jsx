@@ -125,12 +125,17 @@ export default function CoordinatorDashboard() {
     const handleOpenProfile = (userId) => {
         setSelectedUserId(userId);
         setModalOpen(true);
-      };
-    
-      const handleCloseProfile = () => {
+    };
+
+    const handleCloseProfile = () => {
         setSelectedUserId(null);
         setModalOpen(false);
-      };
+    };
+
+    const selectedStyle = {
+        backgroundColor: "#444",
+        color: "white",
+    };
 
     return (
         <ThemeProvider theme={theme}>
@@ -151,7 +156,7 @@ export default function CoordinatorDashboard() {
                             Donor Dashboard
                         </Typography>
                         <Box sx={{ flexGrow: 1 }} />
-                        <AccountCircleIcon sx={{ marginRight: 1 }} onClick={() => handleOpenProfile(localStorage.getItem('userId'))}/>
+                        <AccountCircleIcon sx={{ marginRight: 1 }} onClick={() => handleOpenProfile(localStorage.getItem('userId'))} />
                         <Typography variant="body1" color="white">
                             {localStorage.getItem('username')}
                         </Typography>
@@ -184,7 +189,10 @@ export default function CoordinatorDashboard() {
                         <StyledList>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("View Requests")}
-                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px" }}
+                                sx={{
+                                    "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px",
+                                    ...(selectedView === "View Requests" && selectedStyle),
+                                }}
                             >
                                 {/* <ListItemIcon> */}
                                 <VisibilityIcon />
@@ -193,7 +201,10 @@ export default function CoordinatorDashboard() {
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("Add Resources")}
-                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px" }}
+                                sx={{
+                                    "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px",
+                                    ...(selectedView === "Add Resources" && selectedStyle),
+                                }}
                             >
                                 {/* <ListItemIcon> */}
                                 <AddCircleIcon />
@@ -202,7 +213,10 @@ export default function CoordinatorDashboard() {
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("MyContributions")}
-                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px" }}
+                                sx={{
+                                    "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px",
+                                    ...(selectedView === "MyContributions" && selectedStyle),
+                                }}
                             >
                                 {/* <ListItemIcon> */}
                                 <AssignmentIcon />
@@ -211,7 +225,10 @@ export default function CoordinatorDashboard() {
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("Change your Role")}
-                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px" }}
+                                sx={{
+                                    "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px",
+                                    ...(selectedView === "Change your Role" && selectedStyle),
+                                }}
                             >
                                 {/* <ListItemIcon> */}
                                 <SwapHorizIcon />
@@ -291,35 +308,35 @@ export default function CoordinatorDashboard() {
                     {selectedView === 'Change your Role' && <ChangeYourRole />}
                 </Main>
                 <Modal
-        open={modalOpen}
-        onClose={handleCloseProfile}
-        aria-labelledby="user-profile-modal"
-        aria-describedby="user-profile-modal-description"
-      >
-        <Box
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 600,
-            bgcolor: "background.paper",
-            border: "2px solid #000",
-            boxShadow: 24,
-            p: 4,
-          }}
-        >
-          {selectedUserId && <UserProfilePage userId={selectedUserId} />}
-          <Button
-            onClick={handleCloseProfile}
-            variant="contained"
-            color="primary"
-            sx={{ mt: 2, ml: 1 }}
-          >
-            Close
-          </Button>
-        </Box>
-      </Modal>
+                    open={modalOpen}
+                    onClose={handleCloseProfile}
+                    aria-labelledby="user-profile-modal"
+                    aria-describedby="user-profile-modal-description"
+                >
+                    <Box
+                        sx={{
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                            width: 600,
+                            bgcolor: "background.paper",
+                            border: "2px solid #000",
+                            boxShadow: 24,
+                            p: 4,
+                        }}
+                    >
+                        {selectedUserId && <UserProfilePage userId={selectedUserId} />}
+                        <Button
+                            onClick={handleCloseProfile}
+                            variant="contained"
+                            color="primary"
+                            sx={{ mt: 2, ml: 1 }}
+                        >
+                            Close
+                        </Button>
+                    </Box>
+                </Modal>
             </Box>
         </ThemeProvider>
     );

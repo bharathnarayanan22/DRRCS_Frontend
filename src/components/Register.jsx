@@ -33,7 +33,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    const apiUrl = isSignUp ? 'https://drrcs-backend.onrender.com/users/register' : 'https://drrcs-backend.onrender.com/users/login';
+    const apiUrl = isSignUp ? 'http://localhost:3000/users/register' : 'http://localhost:3000/users/login';
     const requestData = { name, email, password, role };
   
     try {
@@ -42,10 +42,11 @@ const Register = () => {
       if (isSignUp) {
         setFormData({ ...formData, isSignUp: false });
       } else {
-        const { token, userId, username } = response.data;
+        const { token, userId, username, role } = response.data;
         localStorage.setItem('token', token);
         localStorage.setItem('userId', userId);
         localStorage.setItem('username', username);
+        localStorage.setItem('role', role);
         await dispatch(setToken(token));
         await dispatch(setUserName(username));
         navigate('/dashboard');

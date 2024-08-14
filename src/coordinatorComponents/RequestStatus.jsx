@@ -18,6 +18,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import axios from '../helpers/auth-config';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import earth from "../assets/earth1.png";
 
 const RequestStatus = () => {
   const [requests, setRequests] = useState([]);
@@ -184,7 +185,7 @@ const RequestStatus = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src="/src/assets/earth1.png" alt="Map" />
+                    <img src={earth} alt="Map" />
                   </a>
                 </TableCell>
                 <TableCell>{request.status}</TableCell>
@@ -330,7 +331,7 @@ const RequestStatus = () => {
               fullWidth
               sx={{ mb: 2 }}
             />
-            <Button type="submit" variant="contained" color="primary" onSubmit={handleSubmitTask}>
+            <Button type="submit" variant="contained" color="primary" onClick={handleSubmitTask}>
               Submit Task
             </Button>
         </Box>
