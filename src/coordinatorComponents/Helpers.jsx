@@ -86,7 +86,7 @@ const Helpers = () => {
       <Typography
         variant="h4"
         gutterBottom
-        style={{ color: "#444", fontWeight: "bold" }}
+        style={{ color: "#2C3E50", fontWeight: "bold" }}
         sx={{
           fontFamily: "Playfair Display",
           fontStyle: "italic",
@@ -99,7 +99,7 @@ const Helpers = () => {
         <Table aria-label="helpers table">
           <TableHead>
             <TableRow
-              sx={{ backgroundColor: "#444", "& th": { color: "#fff" } }}
+              sx={{ backgroundColor: "#2C3E50", "& th": { color: "#fff" } }}
             >
               <TableCell>S.NO</TableCell>
               <TableCell>Name</TableCell>

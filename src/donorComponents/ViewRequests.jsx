@@ -119,7 +119,7 @@ const ViewRequests = () => {
           fontFamily: "Playfair Display",
           fontStyle: "italic",
           fontWeight: 900,
-          color: "#444",
+          color: "#2C3E50",
         }}
       >
         View Requests
@@ -172,7 +172,7 @@ const ViewRequests = () => {
               variant="outlined"
               onClick={handleGetLocation}
               sx={{
-                backgroundColor: "#444",
+                backgroundColor: "#2C3E50",
                 color: "#fff",
                 ":hover": { backgroundColor: "#333" },
               }}

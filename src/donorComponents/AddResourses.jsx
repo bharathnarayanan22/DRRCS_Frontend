@@ -10,10 +10,10 @@ import 'react-toastify/dist/ReactToastify.css';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#444',
+      main: '#2C3E50',
     },
     secondary: {
-      main: '#444',
+      main: '#2C3E50',
     },
   },
 });
@@ -77,7 +77,7 @@ const AddResources = () => {
     <ThemeProvider theme={theme}>
       <ToastContainer/>
       <Box>
-        <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#444" }}>
+        <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#2C3E50" }}>
           Add New Resource
         </Typography>
         <TextField
@@ -100,7 +100,7 @@ const AddResources = () => {
         <Typography
           variant="h6"
           gutterBottom
-          sx={{ color: "#444", fontWeight: "bold", mt: 2 }}
+          sx={{ color: "#2C3E50", fontWeight: "bold", mt: 2 }}
         >
           Resource Location
         </Typography>
@@ -109,7 +109,7 @@ const AddResources = () => {
             variant="outlined"
             onClick={getLocation}
             sx={{
-              backgroundColor: "#444",
+              backgroundColor: "#2C3E50",
               color: "#fff",
               ":hover": { backgroundColor: "#333" },
             }}
@@ -123,7 +123,7 @@ const AddResources = () => {
           variant="contained"
           onClick={handleSubmit}
           sx={{
-            backgroundColor: "#444",
+            backgroundColor: "#2C3E50",
             color: "#fff",
             mt: 2,
             ":hover": { backgroundColor: "#333" },

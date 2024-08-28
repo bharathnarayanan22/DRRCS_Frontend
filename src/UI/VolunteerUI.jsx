@@ -87,10 +87,10 @@ const StyledListItemIcon = styled(ListItemIcon)(({ theme }) => ({
 const theme = createTheme({
     palette: {
         primary: {
-            main: "#444",
+            main: "#2C3E50",
         },
         secondary: {
-            main: "#444",
+            main: "#2C3E50",
         },
     },
 });
@@ -130,7 +130,7 @@ export default function CoordinatorDashboard() {
     };
 
     const selectedStyle = {
-        backgroundColor: "#444",
+        backgroundColor: "#2C3E50",
         color: "white",
     };
 
@@ -192,7 +192,7 @@ export default function CoordinatorDashboard() {
                             <IconButton
                                 onClick={handleDrawerClose}
                                 color="inherit"
-                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" } }}
+                                sx={{ "&:hover": { backgroundColor: "#2C3E50", color: "white" } }}
                             >
                                 <ChevronLeftIcon />
                             </IconButton>
@@ -201,7 +201,7 @@ export default function CoordinatorDashboard() {
                         <StyledList>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("Available Tasks")}
-                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px",
+                                sx={{ "&:hover": { backgroundColor: "#2C3E50", color: "white" }, gap: "32px",
                                 ...(selectedView === "Available Tasks" && selectedStyle) }}
                             >
                                 {/* <ListItemIcon> */}
@@ -211,7 +211,7 @@ export default function CoordinatorDashboard() {
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("MyTasks")}
-                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px",
+                                sx={{ "&:hover": { backgroundColor: "#2C3E50", color: "white" }, gap: "32px",
                                 ...(selectedView === "MyTasks" && selectedStyle) }}
                             >
                                 {/* <ListItemIcon> */}
@@ -221,7 +221,7 @@ export default function CoordinatorDashboard() {
                             </ListItemButton>
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("Change your Role")}
-                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px",
+                                sx={{ "&:hover": { backgroundColor: "#2C3E50", color: "white" }, gap: "32px",
                                 ...(selectedView === "Change your Role" && selectedStyle) }}
                             >
                                 {/* <ListItemIcon> */}
@@ -235,7 +235,7 @@ export default function CoordinatorDashboard() {
                         <Divider />
                         <ListItemButton
                             onClick={handleHomeClick}
-                            sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px" }}
+                            sx={{ "&:hover": { backgroundColor: "#2C3E50", color: "white" }, gap: "32px" }}
                         >
                             {/* <StyledListItemIcon> */}
                             <ExitToAppIcon />
@@ -262,7 +262,7 @@ export default function CoordinatorDashboard() {
                     <DrawerHeader />
                     {selectedView === null && (
                         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', gap: 10, padding: 4, alignItems: "center", alignContent: "center", height: "500px" }}>
-                            <Card sx={{ backgroundColor: '#444', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("Available Tasks")}>
+                            <Card sx={{ backgroundColor: '#2C3E50', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("Available Tasks")}>
                                 <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                     <TaskIcon sx={{ fontSize: 125, color: 'white' }} />
                                     <Typography gutterBottom variant="body2" component="div" color="white" textAlign="center">
@@ -270,7 +270,7 @@ export default function CoordinatorDashboard() {
                                     </Typography>
                                 </CardContent>
                             </Card>
-                            <Card sx={{ backgroundColor: '#444', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("MyTasks")}>
+                            <Card sx={{ backgroundColor: '#2C3E50', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("MyTasks")}>
                                 <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                     <AssignmentIcon sx={{ fontSize: 125, color: 'white' }} />
                                     <Typography gutterBottom variant="body2" component="div" color="white" textAlign="center">
@@ -278,7 +278,7 @@ export default function CoordinatorDashboard() {
                                     </Typography>
                                 </CardContent>
                             </Card>
-                            <Card sx={{ backgroundColor: '#444', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("Change your Role")}>
+                            <Card sx={{ backgroundColor: '#2C3E50', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("Change your Role")}>
                                 <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                     <SwapHorizIcon sx={{ fontSize: 125, color: 'white' }} />
                                     <Typography gutterBottom variant="body2" component="div" color="white" textAlign="center">

@@ -90,10 +90,10 @@ const StyledListItemIcon = styled(ListItemIcon)(({ theme }) => ({
 const theme = createTheme({
     palette: {
         primary: {
-            main: "#444",
+            main: "#2C3E50",
         },
         secondary: {
-            main: "#444",
+            main: "#2C3E50",
         },
     },
 });
@@ -133,7 +133,7 @@ export default function CoordinatorDashboard() {
     };
 
     const selectedStyle = {
-        backgroundColor: "#444",
+        backgroundColor: "#2C3E50",
         color: "white",
     };
 
@@ -180,7 +180,7 @@ export default function CoordinatorDashboard() {
                             <IconButton
                                 onClick={handleDrawerClose}
                                 color="inherit"
-                                sx={{ "&:hover": { backgroundColor: "#444", color: "white" } }}
+                                sx={{ "&:hover": { backgroundColor: "#2C3E50", color: "white" } }}
                             >
                                 <ChevronLeftIcon />
                             </IconButton>
@@ -190,7 +190,7 @@ export default function CoordinatorDashboard() {
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("View Requests")}
                                 sx={{
-                                    "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px",
+                                    "&:hover": { backgroundColor: "#2C3E50", color: "white" }, gap: "32px",
                                     ...(selectedView === "View Requests" && selectedStyle),
                                 }}
                             >
@@ -202,7 +202,7 @@ export default function CoordinatorDashboard() {
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("Add Resources")}
                                 sx={{
-                                    "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px",
+                                    "&:hover": { backgroundColor: "#2C3E50", color: "white" }, gap: "32px",
                                     ...(selectedView === "Add Resources" && selectedStyle),
                                 }}
                             >
@@ -214,7 +214,7 @@ export default function CoordinatorDashboard() {
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("MyContributions")}
                                 sx={{
-                                    "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px",
+                                    "&:hover": { backgroundColor: "#2C3E50", color: "white" }, gap: "32px",
                                     ...(selectedView === "MyContributions" && selectedStyle),
                                 }}
                             >
@@ -226,7 +226,7 @@ export default function CoordinatorDashboard() {
                             <ListItemButton
                                 onClick={() => handleMenuItemClick("Change your Role")}
                                 sx={{
-                                    "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px",
+                                    "&:hover": { backgroundColor: "#2C3E50", color: "white" }, gap: "32px",
                                     ...(selectedView === "Change your Role" && selectedStyle),
                                 }}
                             >
@@ -241,7 +241,7 @@ export default function CoordinatorDashboard() {
                         <Divider />
                         <ListItemButton
                             onClick={handleHomeClick}
-                            sx={{ "&:hover": { backgroundColor: "#444", color: "white" }, gap: "32px" }}
+                            sx={{ "&:hover": { backgroundColor: "#2C3E50", color: "white" }, gap: "32px" }}
                         >
                             {/* <StyledListItemIcon> */}
                             <ExitToAppIcon />
@@ -268,7 +268,7 @@ export default function CoordinatorDashboard() {
                     <DrawerHeader />
                     {selectedView === null && (
                         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', gap: 10, padding: 4, alignItems: "center", alignContent: "center", height: "500px" }}>
-                            <Card sx={{ backgroundColor: '#444', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("View Requests")}>
+                            <Card sx={{ backgroundColor: '#2C3E50', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("View Requests")}>
                                 <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                     <VisibilityIcon sx={{ fontSize: 125, color: 'white' }} />
                                     <Typography gutterBottom variant="body2" component="div" color="white" textAlign="center">
@@ -276,7 +276,7 @@ export default function CoordinatorDashboard() {
                                     </Typography>
                                 </CardContent>
                             </Card>
-                            <Card sx={{ backgroundColor: '#444', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("Add Resources")}>
+                            <Card sx={{ backgroundColor: '#2C3E50', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("Add Resources")}>
                                 <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                     <AddCircleIcon sx={{ fontSize: 125, color: 'white' }} />
                                     <Typography gutterBottom variant="body2" component="div" color="white" textAlign="center">
@@ -284,7 +284,7 @@ export default function CoordinatorDashboard() {
                                     </Typography>
                                 </CardContent>
                             </Card>
-                            <Card sx={{ backgroundColor: '#444', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("MyContributions")}>
+                            <Card sx={{ backgroundColor: '#2C3E50', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("MyContributions")}>
                                 <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                     <AssignmentIcon sx={{ fontSize: 125, color: 'white' }} />
                                     <Typography gutterBottom variant="body2" component="div" color="white" textAlign="center">
@@ -292,7 +292,7 @@ export default function CoordinatorDashboard() {
                                     </Typography>
                                 </CardContent>
                             </Card>
-                            <Card sx={{ backgroundColor: '#444', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("Change your Role")}>
+                            <Card sx={{ backgroundColor: '#2C3E50', width: '20%', borderRadius: 5 }} onClick={() => handleMenuItemClick("Change your Role")}>
                                 <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                     <SwapHorizIcon sx={{ fontSize: 125, color: 'white' }} />
                                     <Typography gutterBottom variant="body2" component="div" color="white" textAlign="center">

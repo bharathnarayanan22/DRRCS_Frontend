@@ -102,10 +102,10 @@ const StyledListItemIcon = styled(ListItemIcon)(({ theme }) => ({
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#444",
+      main: "#2C3E50",
     },
     secondary: {
-      main: "#444",
+      main: "#2C3E50",
     },
   },
 });
@@ -150,7 +150,7 @@ export default function CoordinatorDashboard() {
   };
 
   const selectedStyle = {
-    backgroundColor: "#444",
+    backgroundColor: "#2C3E50",
     color: "white",
   };
 
@@ -212,7 +212,7 @@ export default function CoordinatorDashboard() {
               <IconButton
                 onClick={handleDrawerClose}
                 color="inherit"
-                sx={{ "&:hover": { backgroundColor: "#444", color: "white" } }}
+                sx={{ "&:hover": { backgroundColor: "#2C3E50", color: "white" } }}
               >
                 <ChevronLeftIcon />
               </IconButton>
@@ -222,7 +222,7 @@ export default function CoordinatorDashboard() {
               <ListItemButton
                 onClick={() => handleMenuItemClick("View Helpers")}
                 sx={{
-                  "&:hover": { backgroundColor: "#444", color: "white" },
+                  "&:hover": { backgroundColor: "#2C3E50", color: "white" },
                   gap: "32px",
                   ...(selectedView === "View Helpers" && selectedStyle),
                 }}
@@ -235,7 +235,7 @@ export default function CoordinatorDashboard() {
               <ListItemButton
                 onClick={() => handleMenuItemClick("View Tasks")}
                 sx={{
-                  "&:hover": { backgroundColor: "#444", color: "white" },
+                  "&:hover": { backgroundColor: "#2C3E50", color: "white" },
                   gap: "32px",
                   ...(selectedView === "View Tasks" && selectedStyle),
                 }}
@@ -248,7 +248,7 @@ export default function CoordinatorDashboard() {
               <ListItemButton
                 onClick={() => handleMenuItemClick("Create Tasks")}
                 sx={{
-                  "&:hover": { backgroundColor: "#444", color: "white" },
+                  "&:hover": { backgroundColor: "#2C3E50", color: "white" },
                   gap: "32px",
                   ...(selectedView === "Create Tasks" && selectedStyle),
                 }}
@@ -261,7 +261,7 @@ export default function CoordinatorDashboard() {
               <ListItemButton
                 onClick={() => handleMenuItemClick("Verify Tasks")}
                 sx={{
-                  "&:hover": { backgroundColor: "#444", color: "white" },
+                  "&:hover": { backgroundColor: "#2C3E50", color: "white" },
                   gap: "32px",
                   ...(selectedView === "Verify Tasks" && selectedStyle),
                 }}
@@ -274,7 +274,7 @@ export default function CoordinatorDashboard() {
               <ListItemButton
                 onClick={() => handleMenuItemClick("View Resources")}
                 sx={{
-                  "&:hover": { backgroundColor: "#444", color: "white" },
+                  "&:hover": { backgroundColor: "#2C3E50", color: "white" },
                   gap: "32px",
                   ...(selectedView === "View Resources" && selectedStyle),
                 }}
@@ -287,7 +287,7 @@ export default function CoordinatorDashboard() {
               <ListItemButton
                 onClick={() => handleMenuItemClick("Send Requests")}
                 sx={{
-                  "&:hover": { backgroundColor: "#444", color: "white" },
+                  "&:hover": { backgroundColor: "#2C3E50", color: "white" },
                   gap: "32px",
                   ...(selectedView === "Send Requests" && selectedStyle),
                 }}
@@ -300,7 +300,7 @@ export default function CoordinatorDashboard() {
               <ListItemButton
                 onClick={() => handleMenuItemClick("Responses")}
                 sx={{
-                  "&:hover": { backgroundColor: "#444", color: "white" },
+                  "&:hover": { backgroundColor: "#2C3E50", color: "white" },
                   gap: "32px",
                   ...(selectedView === "Responses" && selectedStyle),
                 }}
@@ -313,7 +313,7 @@ export default function CoordinatorDashboard() {
               <ListItemButton
                 onClick={() => handleMenuItemClick("Become a Co")}
                 sx={{
-                  "&:hover": { backgroundColor: "#444", color: "white" },
+                  "&:hover": { backgroundColor: "#2C3E50", color: "white" },
                   gap: "32px",
                   ...(selectedView === "Become a Co" && selectedStyle),
                 }}
@@ -330,7 +330,7 @@ export default function CoordinatorDashboard() {
             <ListItemButton
               onClick={handleHomeClick}
               sx={{
-                "&:hover": { backgroundColor: "#444", color: "white" },
+                "&:hover": { backgroundColor: "#2C3E50", color: "white" },
                 gap: "32px",
               }}
             >
@@ -354,7 +354,7 @@ export default function CoordinatorDashboard() {
               }}
             >
               <Card
-                sx={{ backgroundColor: "#444", width: "20%", borderRadius: 5 }}
+                sx={{ backgroundColor: "#2C3E50", width: "20%", borderRadius: 5 }}
                 onClick={() => handleMenuItemClick("View Helpers")}
               >
                 <CardContent
@@ -377,7 +377,7 @@ export default function CoordinatorDashboard() {
                 </CardContent>
               </Card>
               <Card
-                sx={{ backgroundColor: "#444", width: "20%", borderRadius: 5 }}
+                sx={{ backgroundColor: "#2C3E50", width: "20%", borderRadius: 5 }}
                 onClick={() => handleMenuItemClick("View Tasks")}
               >
                 <CardContent
@@ -400,7 +400,7 @@ export default function CoordinatorDashboard() {
                 </CardContent>
               </Card>
               <Card
-                sx={{ backgroundColor: "#444", width: "20%", borderRadius: 5 }}
+                sx={{ backgroundColor: "#2C3E50", width: "20%", borderRadius: 5 }}
                 onClick={() => handleMenuItemClick("Verify Tasks")}
               >
                 <CardContent
@@ -423,7 +423,7 @@ export default function CoordinatorDashboard() {
                 </CardContent>
               </Card>
               <Card
-                sx={{ backgroundColor: "#444", width: "20%", borderRadius: 5 }}
+                sx={{ backgroundColor: "#2C3E50", width: "20%", borderRadius: 5 }}
                 onClick={() => handleMenuItemClick("Create Tasks")}
               >
                 <CardContent
@@ -446,7 +446,7 @@ export default function CoordinatorDashboard() {
                 </CardContent>
               </Card>
               <Card
-                sx={{ backgroundColor: "#444", width: "20%", borderRadius: 5 }}
+                sx={{ backgroundColor: "#2C3E50", width: "20%", borderRadius: 5 }}
                 onClick={() => handleMenuItemClick("View Resources")}
               >
                 <CardContent
@@ -469,7 +469,7 @@ export default function CoordinatorDashboard() {
                 </CardContent>
               </Card>
               <Card
-                sx={{ backgroundColor: "#444", width: "20%", borderRadius: 5 }}
+                sx={{ backgroundColor: "#2C3E50", width: "20%", borderRadius: 5 }}
                 onClick={() => handleMenuItemClick("Send Requests")}
               >
                 <CardContent
@@ -492,7 +492,7 @@ export default function CoordinatorDashboard() {
                 </CardContent>
               </Card>
               <Card
-                sx={{ backgroundColor: "#444", width: "20%", borderRadius: 5 }}
+                sx={{ backgroundColor: "#2C3E50", width: "20%", borderRadius: 5 }}
                 onClick={() => handleMenuItemClick("Responses")}
               >
                 <CardContent
@@ -515,7 +515,7 @@ export default function CoordinatorDashboard() {
                 </CardContent>
               </Card>
               <Card
-                sx={{ backgroundColor: "#444", width: "20%", borderRadius: 5 }}
+                sx={{ backgroundColor: "#2C3E50", width: "20%", borderRadius: 5 }}
                 onClick={() => handleMenuItemClick("Become a Co")}
               >
                 <CardContent

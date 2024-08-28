@@ -51,7 +51,7 @@ const UserProfilePage = ({ userId }) => {
               <Avatar
                 alt={user?.name}
                 src="/static/images/avatar/1.jpg" 
-                sx={{ width: 120, height: 120, fontSize: 40, backgroundColor: "#444" }}
+                sx={{ width: 120, height: 120, fontSize: 40, backgroundColor: "#2C3E50" }}
               >
                 {user?.name.charAt(0)}
               </Avatar>

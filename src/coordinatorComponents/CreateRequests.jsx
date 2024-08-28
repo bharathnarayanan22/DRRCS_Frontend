@@ -63,7 +63,7 @@ const CreateRequest = () => {
       <Typography
         variant="h4"
         gutterBottom
-        sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#444" }}
+        sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#2C3E50" }}
       >
         Create New Request
       </Typography>
@@ -84,11 +84,11 @@ const CreateRequest = () => {
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
         />
-        <Button variant="contained" onClick={getLocation} sx={{ backgroundColor: "#444", color: "#fff", mt: 2, mb:2, ":hover": { backgroundColor: "#333" } }}>
+        <Button variant="contained" onClick={getLocation} sx={{ backgroundColor: "#2C3E50", color: "#fff", mt: 2, mb:2, ":hover": { backgroundColor: "#333" } }}>
   Get My Location
 </Button>
         <MapPicker location={location} setLocation={setLocation} />
-        <Button type="submit" variant="contained" onClick={handleSubmit} sx={{ backgroundColor: "#444", color: "#fff", mt: 2, ":hover": { backgroundColor: "#333" } }}>
+        <Button type="submit" variant="contained" onClick={handleSubmit} sx={{ backgroundColor: "#2C3E50", color: "#fff", mt: 2, ":hover": { backgroundColor: "#333" } }}>
           Create Request
         </Button>
     </Box>

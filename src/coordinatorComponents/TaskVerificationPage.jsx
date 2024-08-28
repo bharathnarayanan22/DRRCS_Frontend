@@ -61,7 +61,7 @@ const TaskVerificationPage = () => {
           fontFamily: 'Playfair Display', 
           fontStyle: 'italic', 
           fontWeight: 900, 
-          color: "#444",
+          color: "#2C3E50",
           
         }}>
         Task Verification

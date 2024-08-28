@@ -41,7 +41,7 @@ const EditResource = ({ resource, onUpdate }) => {
 
   return (
     <Box mt={2}>
-      <Typography variant="h5" gutterBottom sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#444" }}>
+      <Typography variant="h5" gutterBottom sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#2C3E50" }}>
         Edit Resource
       </Typography>
       <TextField

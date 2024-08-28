@@ -107,8 +107,8 @@ const Resources = () => {
       <Typography
         variant="h4"
         gutterBottom
-        style={{ color: "#444", fontWeight: "bold" }}
-        sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight: 900, color: "#444" }}
+        style={{ color: "#2C3E50", fontWeight: "bold" }}
+        sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight: 900, color: "#2C3E50" }}
       >
         Resources Overview
       </Typography>
@@ -116,7 +116,7 @@ const Resources = () => {
         <Table aria-label="resources table">
           <TableHead>
             <TableRow
-              sx={{ backgroundColor: "#444", "& th": { color: "#fff" } }}
+              sx={{ backgroundColor: "#2C3E50", "& th": { color: "#fff" } }}
             >
               <TableCell>S.NO</TableCell>
               <TableCell>Type</TableCell>

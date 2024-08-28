@@ -143,7 +143,7 @@ const Tasks = () => {
 
   return (
     <Box>
-      <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#444" }}>
+      <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#2C3E50" }}>
         Pending Tasks
       </Typography>
       {tasks.length === 0 ? (<Typography>
@@ -153,7 +153,7 @@ const Tasks = () => {
         <Table aria-label="tasks table">
           <TableHead>
             <TableRow
-             sx={{ backgroundColor: "#444", "& th": { color: "#fff" } }}>
+             sx={{ backgroundColor: "#2C3E50", "& th": { color: "#fff" } }}>
               <TableCell>S.NO</TableCell>
               <TableCell>Description</TableCell>
               <TableCell>Volunteers Needed</TableCell>

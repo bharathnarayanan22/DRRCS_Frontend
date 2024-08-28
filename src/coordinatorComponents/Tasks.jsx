@@ -95,14 +95,14 @@ const Tasks = () => {
             <Typography
                 variant="h4"
                 gutterBottom
-                sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#444" }}
+                sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#2C3E50" }}
             >
                 Tasks Overview
             </Typography>
             <TableContainer component={Paper}>
                 <Table aria-label="tasks table">
                     <TableHead>
-                        <TableRow sx={{ backgroundColor: "#444", "& th": { color: "#fff" } }}>
+                        <TableRow sx={{ backgroundColor: "#2C3E50", "& th": { color: "#fff" } }}>
                             <TableCell>S.NO</TableCell>
                             <TableCell>Task</TableCell>
                             <TableCell>Volunteers Needed</TableCell>

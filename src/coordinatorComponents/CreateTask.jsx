@@ -10,10 +10,10 @@ import 'react-toastify/dist/ReactToastify.css';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#444',
+      main: '#2C3E50',
     },
     secondary: {
-      main: '#444',
+      main: '#2C3E50',
     },
   },
 });
@@ -66,7 +66,7 @@ const CreateTask = () => {
       <Typography
         variant="h4"
         gutterBottom
-        sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#444" }}
+        sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#2C3E50" }}
       >
         Create New Task
       </Typography>
@@ -103,15 +103,15 @@ const CreateTask = () => {
           value={endLocation}
           onChange={(e) => setEndLocation(e.target.value)}
         /> */}
-        <Typography variant="h6" gutterBottom sx={{ color: "#444", fontWeight: "bold" }}>
+        <Typography variant="h6" gutterBottom sx={{ color: "#2C3E50", fontWeight: "bold" }}>
           Start Location
         </Typography>
         <MapPicker setLocation={setStartLocation} location={startLocation} />
-        <Typography variant="h6" gutterBottom sx={{ color: "#444", fontWeight: "bold", mt: 2 }}>
+        <Typography variant="h6" gutterBottom sx={{ color: "#2C3E50", fontWeight: "bold", mt: 2 }}>
           End Location
         </Typography>
         <MapPicker setLocation={setEndLocation} location={endLocation} />
-        <Button type="submit" variant="contained" onClick={handleSubmit}sx={{ backgroundColor: "#444", color: "#fff", mt: 2, ":hover": { backgroundColor: "#333" } }}>
+        <Button type="submit" variant="contained" onClick={handleSubmit}sx={{ backgroundColor: "#2C3E50", color: "#fff", mt: 2, ":hover": { backgroundColor: "#333" } }}>
           Create Task
         </Button>
     </Box>

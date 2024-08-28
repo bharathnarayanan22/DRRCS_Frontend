@@ -35,7 +35,7 @@
     padding: 10px 20px;
     font-size: 110%;
     color: #f0f0f0;
-    background-color: Black;
+    background-color: #2C3E50;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -43,8 +43,8 @@
 
 .registerButton:hover {
     background-color: white;
-    color: black;
-    border: 1px solid black;
+    color: #2C3E50;
+    border: 1px solid #2C3E50;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 

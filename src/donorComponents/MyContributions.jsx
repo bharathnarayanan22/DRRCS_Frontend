@@ -76,7 +76,7 @@ const MyContributions = () => {
             fontFamily: 'Playfair Display, serif',
             fontStyle: 'italic',
             fontWeight: 700,
-            color: '#333',
+            color: '#2C3E50',
             textAlign: 'center',
             marginBottom: 4,
           }}
@@ -91,7 +91,7 @@ const MyContributions = () => {
             sx={{
               fontFamily: 'Lora, serif',
               fontWeight: 600,
-              color: '#444',
+              color: '#2C3E50',
               marginBottom: 2,
             }}
           >
@@ -133,7 +133,7 @@ const MyContributions = () => {
             sx={{
               fontFamily: 'Lora, serif',
               fontWeight: 600,
-              color: '#444',
+              color: '#2C3E50',
               marginBottom: 2,
             }}
           >

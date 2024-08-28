@@ -8,7 +8,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("/src/assets/4.jpg");
+  background-image: url("/src/assets/5.jpg");
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +27,7 @@ h1 {
 
 h2 {
   text-align: center;
-  color: black;
+  color: #2C3E50;
 }
 
 p {
@@ -36,7 +36,7 @@ p {
   line-height: 20px;
   letter-spacing: 0.5px;
   margin: 20px 0 30px;
-  color: black; 
+  color: #2C3E50; 
 }
 
 a {
@@ -50,7 +50,7 @@ button {
   border-radius: 20px;
   border: 1px solid #fff; 
   background-color: white; 
-  color: black; 
+  color: #2C3E50; 
   font-size: 12px;
   font-weight: bold;
   padding: 12px 45px;
@@ -60,7 +60,7 @@ button {
   margin-top: 5%;
 }
 button:hover{
-  background-color: black; 
+  background-color: #2C3E50; 
   color: white; 
 }
 
@@ -73,18 +73,18 @@ button:focus {
 }
 
 button.ghost {
-  background-color: black;
+  background-color: #2C3E50;
   color: #fff;  
 }
 button.ghost:hover{
   background-color: white;
-  color: black; 
-  border-color: black;
+  color: #2C3E50; 
+  border-color: #2C3E50;
   cursor: pointer;
 }
 
 form {
-  background-color: rgb(0, 0, 0); 
+  background-color: #2C3E50; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,11 +101,11 @@ input, select {
   padding: 12px 15px;
   margin: 8px 0;
   width: 100%;
-  color: #000; 
+  color: #2C3E50; 
 }
 
 .container {
-  background-color: #000; 
+  background-color: #2C3E50; 
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
@@ -176,7 +176,7 @@ input, select {
 
 .overlay {
   background: white; 
-  color: black; 
+  color: #2C3E50; 
   position: relative;
   left: -100%;
   height: 100%;

@@ -156,14 +156,14 @@ const RequestStatus = () => {
       <Typography
         variant="h4"
         gutterBottom
-        sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight: 900, color: "#444" }}
+        sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight: 900, color: "#2C3E50" }}
       >
         Request Status
       </Typography>
       <TableContainer component={Paper}>
         <Table aria-label="requests table">
           <TableHead>
-            <TableRow sx={{ backgroundColor: "#444", "& th": { color: "#fff" } }}>
+            <TableRow sx={{ backgroundColor: "#2C3E50", "& th": { color: "#fff" } }}>
               <TableCell>S.NO</TableCell>
               <TableCell>Type</TableCell>
               <TableCell>Quantity</TableCell>
@@ -225,7 +225,7 @@ const RequestStatus = () => {
           <TableContainer component={Paper}>
             <Table aria-label="responses table">
               <TableHead>
-                <TableRow sx={{ backgroundColor: "#444", "& th": { color: "#fff" } }}>
+                <TableRow sx={{ backgroundColor: "#2C3E50", "& th": { color: "#fff" } }}>
                   <TableCell>Response ID</TableCell>
                   <TableCell>Donor</TableCell>
                   <TableCell>Resource</TableCell>
@@ -296,7 +296,7 @@ const RequestStatus = () => {
             overflow: "auto",
           }}
         >
-          <Typography variant="h6" gutterBottom sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight: 900, color: "#444" }}>
+          <Typography variant="h6" gutterBottom sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight: 900, color: "#2C3E50" }}>
             Create Task
           </Typography>
             <TextField

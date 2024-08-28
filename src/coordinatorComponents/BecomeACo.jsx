@@ -96,7 +96,7 @@ const BecomeACo = () => {
           fontFamily: "Playfair Display",
           fontStyle: "italic",
           fontWeight: 900,
-          color: "#444",
+          color: "#2C3E50",
         }}
       >
         Become A Co Applications
@@ -108,7 +108,7 @@ const BecomeACo = () => {
           <Table aria-label="role change applications table">
             <TableHead>
               <TableRow
-                sx={{ backgroundColor: "#444", "& th": { color: "#fff" } }}
+                sx={{ backgroundColor: "#2C3E50", "& th": { color: "#fff" } }}
               >
                 <TableCell>Name</TableCell>
                 <TableCell>Current Role</TableCell>

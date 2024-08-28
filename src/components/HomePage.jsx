@@ -20,7 +20,7 @@ const HomePage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
-        <h1 style={{fontSize: "280%", marginBottom: "20px", color:"black"}}>
+        <h1 style={{fontSize: "280%", marginBottom: "20px", color:"#2C3E50"}}>
           <TypeAnimation
             sequence={[
               "Disaster Relief Resource Coordination System",

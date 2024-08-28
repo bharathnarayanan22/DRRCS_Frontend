@@ -84,11 +84,11 @@ const MyTasks = () => {
   return (
     <StyledContainer>
       <ToastContainer />
-      <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#444" }}>
+      <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:900, color:"#2C3E50" }}>
         My Tasks
       </Typography>
       {tasks.length === 0 && (
-        <Typography variant="subtitle1" sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:400, color:"#444" }}>
+        <Typography variant="subtitle1" sx={{ fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight:400, color:"#2C3E50" }}>
           You have no tasks yet.
         </Typography>
       )}
